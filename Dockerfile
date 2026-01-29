@@ -5,12 +5,11 @@ WORKDIR /app
 # Copy the pre-built storybook
 COPY apps/storybook/dist ./storybook-static
 
-# Install serve
+# Install serve globally
 RUN npm install -g serve
 
-# Railway uses PORT env variable
-ENV PORT=3000
+# Expose port
 EXPOSE 3000
 
-# Serve static files - serve uses -l for listen
-CMD serve storybook-static -s -l tcp://0.0.0.0:${PORT}
+# Simple serve command - Railway sets PORT env var
+CMD ["sh", "-c", "serve storybook-static -s -p ${PORT:-3000}"]

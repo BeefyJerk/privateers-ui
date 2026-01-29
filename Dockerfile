@@ -1,7 +1,7 @@
-# Super simple - just serve the pre-built static files
+# Simple static file server for Storybook
 FROM node:20-alpine
-RUN npm install -g serve
+RUN npm install -g http-server
 WORKDIR /app
 COPY apps/storybook/dist ./dist
 EXPOSE 3000
-CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD ["http-server", "dist", "-p", "3000", "-c-1", "--cors"]

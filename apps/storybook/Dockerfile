@@ -1,13 +1,16 @@
 # Build stage
 FROM node:20-alpine AS builder
 
+# Increase Node memory limit for TypeScript compilation
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
-# Copy workspace files
-COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+# Copy all workspace config files first
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json tsconfig.base.json ./
 COPY packages/ui/package.json ./packages/ui/
 COPY apps/storybook/package.json ./apps/storybook/
 
@@ -18,8 +21,8 @@ RUN pnpm install --frozen-lockfile
 COPY packages/ui ./packages/ui
 COPY apps/storybook ./apps/storybook
 
-# Build UI package first
-RUN pnpm --filter @privateers/ui build
+# Build UI package (skip dts if it fails, Storybook doesn't need it)
+RUN cd packages/ui && pnpm build || (echo "Full build failed, trying without dts" && npx tsup src/index.ts src/tailwind/preset.ts --format esm,cjs --no-dts)
 
 # Build Storybook
 RUN pnpm --filter storybook build

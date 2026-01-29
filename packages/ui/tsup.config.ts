@@ -6,7 +6,11 @@ export default defineConfig({
     'tailwind/preset': 'src/tailwind/preset.ts',
   },
   format: ['esm', 'cjs'],
-  dts: true,
+  dts: {
+    compilerOptions: {
+      skipLibCheck: true,
+    },
+  },
   sourcemap: true,
   clean: true,
   external: [

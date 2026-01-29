@@ -1,0 +1,42 @@
+# .github/workflows/notify-telegram.yml
+# Sends Telegram notification on push, PR, and issues
+
+name: Notify Telegram
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, closed, merged]
+  issues:
+    types: [opened, closed]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram notification
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          EVENT="${{ github.event_name }}"
+          REPO="${{ github.repository }}"
+          ACTOR="${{ github.actor }}"
+          
+          if [ "$EVENT" = "push" ]; then
+            MSG="🔀 *Push til $REPO*%0A%0ACommit: \`${{ github.event.head_commit.message }}\`%0AAf: $ACTOR"
+          elif [ "$EVENT" = "pull_request" ]; then
+            ACTION="${{ github.event.action }}"
+            PR_TITLE="${{ github.event.pull_request.title }}"
+            MSG="📥 *PR $ACTION i $REPO*%0A%0A$PR_TITLE%0AAf: $ACTOR"
+          elif [ "$EVENT" = "issues" ]; then
+            ACTION="${{ github.event.action }}"
+            ISSUE_TITLE="${{ github.event.issue.title }}"
+            MSG="📋 *Issue $ACTION i $REPO*%0A%0A$ISSUE_TITLE%0AAf: $ACTOR"
+          fi
+          
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "text=${MSG}" \
+            -d "parse_mode=Markdown"

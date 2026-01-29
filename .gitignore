@@ -5,9 +5,9 @@ node_modules
 **/node_modules
 
 # build outputs
-dist
-**/dist
+packages/ui/dist
 storybook-static
+# apps/storybook/dist is committed for Railway deployment
 /.pnp
 .pnp.*
 .yarn/*

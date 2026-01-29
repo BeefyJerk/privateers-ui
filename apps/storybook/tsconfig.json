@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@privateers/ui": ["../../packages/ui/src"],
+      "@privateers/ui/*": ["../../packages/ui/src/*"]
+    }
+  },
+  "include": [
+    ".storybook/**/*",
+    "stories/**/*",
+    "../../packages/ui/src/**/*.stories.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

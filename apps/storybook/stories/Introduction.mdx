@@ -1,0 +1,105 @@
+import { Meta } from "@storybook/blocks"
+
+<Meta title="Introduction" />
+
+# Privateers Design System
+
+Welcome to the Privateers Design System - a modern React component library built with Radix UI, Class Variance Authority (CVA), and Tailwind CSS v4.
+
+## Features
+
+- **OKLch Color System** - Perceptually uniform colors for consistent design
+- **Dark Mode** - Full dark mode support out of the box
+- **Accessible** - Built on Radix UI primitives for accessibility
+- **Type-Safe** - Full TypeScript support with proper types
+- **Customizable** - Easy to customize with CSS variables and Tailwind
+
+## Installation
+
+```bash
+pnpm add @privateers/ui
+```
+
+## Setup
+
+### 1. Import Styles
+
+Add the following to your main CSS file:
+
+```css
+@import "tailwindcss";
+@import "@privateers/ui/styles";
+```
+
+### 2. Use Components
+
+```tsx
+import { Button, Card, CardHeader, CardTitle, CardContent } from '@privateers/ui'
+
+function App() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Hello World</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button>Click me</Button>
+      </CardContent>
+    </Card>
+  )
+}
+```
+
+## Component Categories
+
+### Primitives
+
+Basic building blocks for your UI:
+- **Button** - Action triggers with multiple variants
+- **Badge** - Status indicators and labels
+- **Card** - Container for content
+- **Input** - Text input field
+- **Textarea** - Multi-line text input
+- **Label** - Form labels
+- **Separator** - Visual divider
+
+### Forms
+
+Form-related components:
+- **Select** - Dropdown selection
+- **Combobox** - Autocomplete search
+- **Field** - Form field wrapper with label and error
+- **InputGroup** - Input with addons
+
+### Feedback
+
+User feedback components:
+- **AlertDialog** - Confirmation dialogs
+- **DropdownMenu** - Context menus
+
+## Theming
+
+The design system uses CSS variables for theming. You can customize colors by overriding the variables in `:root`:
+
+```css
+:root {
+  --primary: oklch(0.51 0.23 277);
+  --primary-foreground: oklch(0.96 0.02 272);
+  /* ... other variables */
+}
+
+.dark {
+  --primary: oklch(0.59 0.20 277);
+  /* ... dark mode overrides */
+}
+```
+
+## Dark Mode
+
+Toggle dark mode by adding the `dark` class to a parent element:
+
+```html
+<html class="dark">
+  <!-- Components will automatically use dark mode styles -->
+</html>
+```

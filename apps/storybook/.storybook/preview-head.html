@@ -1,0 +1,21 @@
+<!-- Google Fonts: Figtree (sans) + Geist Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+  /* Ensure fonts are applied globally */
+  :root {
+    --font-sans: "Figtree", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body, html {
+    font-family: var(--font-sans) !important;
+  }
+
+  /* Force Storybook UI to not interfere */
+  .sb-show-main.sb-main-padded {
+    font-family: var(--font-sans);
+  }
+</style>

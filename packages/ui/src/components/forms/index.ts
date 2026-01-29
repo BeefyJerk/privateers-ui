@@ -33,21 +33,5 @@ export {
   FieldTitle,
 } from "./field"
 
-export {
-  Combobox,
-  ComboboxInput,
-  ComboboxContent,
-  ComboboxList,
-  ComboboxItem,
-  ComboboxGroup,
-  ComboboxLabel,
-  ComboboxCollection,
-  ComboboxEmpty,
-  ComboboxSeparator,
-  ComboboxChips,
-  ComboboxChip,
-  ComboboxChipsInput,
-  ComboboxTrigger,
-  ComboboxValue,
-  useComboboxAnchor,
-} from "./combobox"
+// Combobox temporarily disabled due to @base-ui/react peer dependency issues
+// export * from "./combobox"

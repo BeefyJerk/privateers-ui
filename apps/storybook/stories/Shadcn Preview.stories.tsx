@@ -22,33 +22,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  Combobox,
-  ComboboxContent,
-  ComboboxEmpty,
-  ComboboxInput,
-  ComboboxItem,
-  ComboboxList,
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-  DropdownMenuPortal,
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
   Input,
-  Label,
   Select,
   SelectContent,
   SelectGroup,
@@ -69,7 +53,6 @@ import {
   MinusIcon,
 } from "lucide-react"
 
-const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const
 
 function ShadcnPreview() {
   const [isDark, setIsDark] = React.useState(false)
@@ -186,19 +169,20 @@ function ShadcnPreview() {
                   </div>
                   <Field>
                     <FieldLabel>Framework</FieldLabel>
-                    <Combobox items={frameworks}>
-                      <ComboboxInput placeholder="Select a framework" />
-                      <ComboboxContent>
-                        <ComboboxEmpty>No frameworks found.</ComboboxEmpty>
-                        <ComboboxList>
-                          {(item) => (
-                            <ComboboxItem key={item} value={item}>
-                              {item}
-                            </ComboboxItem>
-                          )}
-                        </ComboboxList>
-                      </ComboboxContent>
-                    </Combobox>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a framework" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectItem value="nextjs">Next.js</SelectItem>
+                          <SelectItem value="sveltekit">SvelteKit</SelectItem>
+                          <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                          <SelectItem value="remix">Remix</SelectItem>
+                          <SelectItem value="astro">Astro</SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
                   </Field>
                   <Field>
                     <FieldLabel>Comments</FieldLabel>

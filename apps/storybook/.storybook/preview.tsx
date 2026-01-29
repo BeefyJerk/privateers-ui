@@ -5,7 +5,7 @@ import "./storybook.css"
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: "light",
+      default: "dark",
       values: [
         { name: "light", value: "#ffffff" },
         { name: "dark", value: "#09090b" },
@@ -35,7 +35,7 @@ const preview: Preview = {
     theme: {
       name: "Theme",
       description: "Global theme for components",
-      defaultValue: "light",
+      defaultValue: "dark",
       toolbar: {
         icon: "circlehollow",
         items: [

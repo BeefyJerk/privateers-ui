@@ -1,6 +1,9 @@
 # Build stage
 FROM node:20-alpine AS builder
 
+# Increase memory for Node
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
 WORKDIR /app
 
 # Enable corepack for pnpm
@@ -18,11 +21,13 @@ RUN pnpm install --frozen-lockfile
 COPY packages/ui ./packages/ui
 COPY apps/storybook ./apps/storybook
 
-# Build
+# Build UI first
 RUN pnpm --filter @privateers/ui build
-RUN pnpm --filter storybook build
 
-# Production stage
+# Build Storybook with increased memory
+RUN NODE_OPTIONS="--max-old-space-size=4096" pnpm --filter storybook build
+
+# Production stage - lightweight
 FROM node:20-alpine
 RUN npm install -g serve
 WORKDIR /app

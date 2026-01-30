@@ -52,11 +52,38 @@ import {
   ToggleRightIcon,
   MinusIcon,
 } from "lucide-react"
+import {
+  Sun as PhSun,
+  Moon as PhMoon,
+  DotsThreeVertical as PhMoreVertical,
+  Plus as PhPlus,
+  Minus as PhMinus,
+  ToggleRight as PhToggleRight,
+  Warning as PhWarning,
+} from "@phosphor-icons/react"
 
 
-function ShadcnPreview() {
+function ShadcnPreview({ brand = "privateers" }: { brand?: string }) {
   const [isDark, setIsDark] = React.useState(false)
   const [gpuCount, setGpuCount] = React.useState(8)
+  const isMPlus = brand === "m-plus"
+
+  // Select icons based on brand
+  const Icons = isMPlus ? {
+    Sun: PhSun,
+    Moon: PhMoon,
+    MoreVertical: PhMoreVertical,
+    Plus: PhPlus,
+    Minus: PhMinus,
+    ToggleRight: PhToggleRight,
+  } : {
+    Sun: SunIcon,
+    Moon: MoonIcon,
+    MoreVertical: MoreVerticalIcon,
+    Plus: PlusIcon,
+    Minus: MinusIcon,
+    ToggleRight: ToggleRightIcon,
+  }
 
   return (
     <div className={isDark ? "dark" : ""}>
@@ -69,7 +96,7 @@ function ShadcnPreview() {
             onClick={() => setIsDark(!isDark)}
             aria-label="Toggle theme"
           >
-            {isDark ? <SunIcon className="size-4" /> : <MoonIcon className="size-4" />}
+            {isDark ? <Icons.Sun className="size-4" /> : <Icons.Moon className="size-4" />}
           </Button>
         </div>
 
@@ -87,14 +114,14 @@ function ShadcnPreview() {
                 <CardDescription>
                   Switch to the improved way to explore your data, with natural
                   language. Monitoring will no longer be available on the Pro plan in
-                  November, 2025
+                  November, 2026
                 </CardDescription>
               </CardHeader>
               <CardFooter className="gap-3">
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
                     <Button>
-                      <PlusIcon className="size-4" />
+                      <Icons.Plus className="size-4" />
                       Create Query
                     </Button>
                   </AlertDialogTrigger>
@@ -130,7 +157,7 @@ function ShadcnPreview() {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon">
-                        <MoreVerticalIcon className="size-4" />
+                        <Icons.MoreVertical className="size-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-48">
@@ -252,8 +279,8 @@ function ShadcnPreview() {
                         <SelectContent>
                           <SelectGroup>
                             {Array.from({ length: 10 }, (_, i) => (
-                              <SelectItem key={i} value={String(2025 + i)}>
-                                {2025 + i}
+                              <SelectItem key={i} value={String(2026 + i)}>
+                                {2026 + i}
                               </SelectItem>
                             ))}
                           </SelectGroup>
@@ -325,14 +352,14 @@ function ShadcnPreview() {
                         size="icon"
                         onClick={() => setGpuCount(Math.max(1, gpuCount - 1))}
                       >
-                        <MinusIcon className="size-4" />
+                        <Icons.Minus className="size-4" />
                       </Button>
                       <Button
                         variant="outline"
                         size="icon"
                         onClick={() => setGpuCount(gpuCount + 1)}
                       >
-                        <PlusIcon className="size-4" />
+                        <Icons.Plus className="size-4" />
                       </Button>
                     </div>
                   </div>
@@ -349,7 +376,7 @@ function ShadcnPreview() {
                     </p>
                   </div>
                   <Button variant="outline" size="sm" className="gap-2">
-                    <ToggleRightIcon className="text-primary size-4" />
+                    <Icons.ToggleRight className="text-primary size-4" />
                   </Button>
                 </div>
               </CardContent>
@@ -366,16 +393,22 @@ function ShadcnPreview() {
   )
 }
 
-const meta: Meta = {
+const meta: Meta<typeof ShadcnPreview> = {
   title: "Preview/Shadcn Style",
   component: ShadcnPreview,
   parameters: {
     layout: "fullscreen",
     backgrounds: { disable: true },
   },
+  decorators: [
+    (Story, context) => {
+      const brand = context.globals.brand ?? "privateers"
+      return <Story args={{ brand }} />
+    },
+  ],
 }
 
 export default meta
-type Story = StoryObj
+type Story = StoryObj<typeof ShadcnPreview>
 
 export const Default: Story = {}

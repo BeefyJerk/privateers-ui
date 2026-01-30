@@ -57,9 +57,57 @@ import {
   AlertCircleIcon,
   InfoIcon,
 } from "lucide-react"
+import {
+  Sun as PhSun,
+  Moon as PhMoon,
+  Bell as PhBell,
+  MagnifyingGlass as PhSearch,
+  Plus as PhPlus,
+  User as PhUser,
+  Gear as PhSettings,
+  SignOut as PhLogOut,
+  Envelope as PhMail,
+  Check as PhCheck,
+  WarningCircle as PhAlertCircle,
+  Info as PhInfo,
+  DotsThreeVertical as PhMoreVertical,
+} from "@phosphor-icons/react"
 
-function KitchenSinkPreview() {
+function KitchenSinkPreview({ brand = "privateers" }: { brand?: string }) {
   const [isDark, setIsDark] = React.useState(false)
+  const brandName = brand === "dis-creadis" ? "DIS/CREADIS" : brand === "m-plus" ? "M+" : "Privateers"
+  const isMPlus = brand === "m-plus"
+
+  // Select icons based on brand
+  const Icons = isMPlus ? {
+    Sun: PhSun,
+    Moon: PhMoon,
+    Bell: PhBell,
+    Search: PhSearch,
+    Plus: PhPlus,
+    User: PhUser,
+    Settings: PhSettings,
+    LogOut: PhLogOut,
+    Mail: PhMail,
+    Check: PhCheck,
+    AlertCircle: PhAlertCircle,
+    Info: PhInfo,
+    MoreVertical: PhMoreVertical,
+  } : {
+    Sun: SunIcon,
+    Moon: MoonIcon,
+    Bell: BellIcon,
+    Search: SearchIcon,
+    Plus: PlusIcon,
+    User: UserIcon,
+    Settings: SettingsIcon,
+    LogOut: LogOutIcon,
+    Mail: MailIcon,
+    Check: CheckIcon,
+    AlertCircle: AlertCircleIcon,
+    Info: InfoIcon,
+    MoreVertical: MoreVerticalIcon,
+  }
 
   return (
     <div className={isDark ? "dark" : ""}>
@@ -67,8 +115,8 @@ function KitchenSinkPreview() {
         {/* Header */}
         <header className="border-border border-b">
           <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-            <div className="flex items-center gap-6">
-              <h1 className="text-xl font-semibold">Privateers</h1>
+            <div className="flex items-center gap-12">
+              <h1 className="text-xl font-semibold">{brandName}</h1>
               <nav className="hidden items-center gap-4 md:flex">
                 <Button variant="ghost" size="sm">Dashboard</Button>
                 <Button variant="ghost" size="sm">Projects</Button>
@@ -82,10 +130,10 @@ function KitchenSinkPreview() {
                 onClick={() => setIsDark(!isDark)}
                 aria-label="Toggle theme"
               >
-                {isDark ? <SunIcon className="size-4" /> : <MoonIcon className="size-4" />}
+                {isDark ? <Icons.Sun className="size-4" /> : <Icons.Moon className="size-4" />}
               </Button>
               <Button variant="ghost" size="icon">
-                <BellIcon className="size-4" />
+                <Icons.Bell className="size-4" />
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -100,17 +148,17 @@ function KitchenSinkPreview() {
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
                     <DropdownMenuItem>
-                      <UserIcon className="size-4" />
+                      <Icons.User className="size-4" />
                       Profile
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      <SettingsIcon className="size-4" />
+                      <Icons.Settings className="size-4" />
                       Settings
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem variant="destructive">
-                    <LogOutIcon className="size-4" />
+                    <Icons.LogOut className="size-4" />
                     Sign out
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -130,7 +178,7 @@ function KitchenSinkPreview() {
               </p>
             </div>
             <Button>
-              <PlusIcon className="size-4" />
+              <Icons.Plus className="size-4" />
               New Project
             </Button>
           </div>
@@ -248,7 +296,7 @@ function KitchenSinkPreview() {
                 <CardContent className="space-y-4">
                   <div className="flex gap-3">
                     <div className="bg-primary/10 text-primary flex size-8 shrink-0 items-center justify-center rounded-full">
-                      <MailIcon className="size-4" />
+                      <Icons.Mail className="size-4" />
                     </div>
                     <div>
                       <p className="text-sm font-medium">New message received</p>
@@ -258,7 +306,7 @@ function KitchenSinkPreview() {
                   <Separator />
                   <div className="flex gap-3">
                     <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-green-500/10 text-green-500">
-                      <CheckIcon className="size-4" />
+                      <Icons.Check className="size-4" />
                     </div>
                     <div>
                       <p className="text-sm font-medium">Deployment successful</p>
@@ -268,7 +316,7 @@ function KitchenSinkPreview() {
                   <Separator />
                   <div className="flex gap-3">
                     <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-500">
-                      <AlertCircleIcon className="size-4" />
+                      <Icons.AlertCircle className="size-4" />
                     </div>
                     <div>
                       <p className="text-sm font-medium">Storage limit warning</p>
@@ -285,15 +333,15 @@ function KitchenSinkPreview() {
                 </CardHeader>
                 <CardContent className="grid gap-2">
                   <Button variant="outline" className="justify-start">
-                    <PlusIcon className="size-4" />
+                    <Icons.Plus className="size-4" />
                     Create new project
                   </Button>
                   <Button variant="outline" className="justify-start">
-                    <UserIcon className="size-4" />
+                    <Icons.User className="size-4" />
                     Invite team member
                   </Button>
                   <Button variant="outline" className="justify-start">
-                    <SettingsIcon className="size-4" />
+                    <Icons.Settings className="size-4" />
                     Project settings
                   </Button>
                 </CardContent>
@@ -350,7 +398,7 @@ function KitchenSinkPreview() {
                 <Button disabled>Disabled</Button>
                 <Button size="sm">Small</Button>
                 <Button size="lg">Large</Button>
-                <Button size="icon"><SearchIcon className="size-4" /></Button>
+                <Button size="icon"><Icons.Search className="size-4" /></Button>
               </div>
             </CardContent>
           </Card>
@@ -376,7 +424,7 @@ function KitchenSinkPreview() {
         <footer className="border-border mt-12 border-t">
           <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
             <p className="text-muted-foreground text-sm">
-              &copy; 2025 Privateers. All rights reserved.
+              &copy; 2026 {brandName}. All rights reserved.
             </p>
             <div className="flex gap-4">
               <Button variant="link" size="sm">Privacy</Button>
@@ -390,13 +438,19 @@ function KitchenSinkPreview() {
   )
 }
 
-const meta: Meta = {
+const meta: Meta<typeof KitchenSinkPreview> = {
   title: "Preview/Kitchen Sink",
   component: KitchenSinkPreview,
   parameters: {
     layout: "fullscreen",
     backgrounds: { disable: true },
   },
+  decorators: [
+    (Story, context) => {
+      const brand = context.globals.brand ?? "privateers"
+      return <Story args={{ brand }} />
+    },
+  ],
 }
 
 export default meta

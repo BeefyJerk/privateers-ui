@@ -17,8 +17,10 @@ function ColorSwatch({ name, variable, className }: { name: string; variable: st
   )
 }
 
-function ThemeShowcase() {
+function ThemeShowcase({ brand = "privateers" }: { brand?: string }) {
   const [isDark, setIsDark] = React.useState(false)
+  const isDisCreadis = brand === "dis-creadis"
+  const logoSrc = isDark ? "/creadis-logo.gif" : "/creadis-logo-dark.gif"
 
   return (
     <div className={isDark ? "dark" : ""}>
@@ -27,7 +29,15 @@ function ThemeShowcase() {
           {/* Header */}
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Design Tokens</h1>
+              {isDisCreadis ? (
+                <img
+                  src={logoSrc}
+                  alt="CREADIS"
+                  className="h-8 object-contain"
+                />
+              ) : (
+                <h1 className="text-3xl font-bold">Design Tokens</h1>
+              )}
               <p className="text-muted-foreground mt-2">
                 Color system built with OKLch for perceptually uniform colors
               </p>
@@ -207,16 +217,22 @@ function ThemeShowcase() {
   )
 }
 
-const meta: Meta = {
+const meta: Meta<typeof ThemeShowcase> = {
   title: "Preview/Theme Showcase",
   component: ThemeShowcase,
   parameters: {
     layout: "fullscreen",
     backgrounds: { disable: true },
   },
+  decorators: [
+    (Story, context) => {
+      const brand = context.globals.brand ?? "privateers"
+      return <Story args={{ brand }} />
+    },
+  ],
 }
 
 export default meta
-type Story = StoryObj
+type Story = StoryObj<typeof ThemeShowcase>
 
 export const Default: Story = {}

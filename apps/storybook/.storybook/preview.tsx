@@ -31,7 +31,7 @@ const preview: Preview = {
       const brand = context.globals.brand ?? "privateers"
 
       const isDark = theme === "dark"
-      const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : ""
+      const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : brand === "m-plus" ? "brand-m-plus" : ""
 
       return (
         <div className={`${isDark ? "dark" : ""} ${brandClass}`.trim()}>
@@ -52,6 +52,7 @@ const preview: Preview = {
         items: [
           { value: "privateers", title: "Privateers" },
           { value: "dis-creadis", title: "DIS/CREADIS" },
+          { value: "m-plus", title: "M+" },
         ],
         showName: true,
         dynamicTitle: true,

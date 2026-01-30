@@ -102,6 +102,7 @@ export const disCreadisTheme = create({
 
   // Brand
   brandTitle: "DIS/CREADIS Design System",
+  brandImage: "/creadis-logo.gif",
   brandUrl: "https://creadis.com",
   brandTarget: "_blank",
 
@@ -150,6 +151,7 @@ export const disCreadisDarkTheme = create({
 
   // Brand
   brandTitle: "DIS/CREADIS Design System",
+  brandImage: "/creadis-logo.gif",
   brandUrl: "https://creadis.com",
   brandTarget: "_blank",
 

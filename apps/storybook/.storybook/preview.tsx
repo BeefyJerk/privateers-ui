@@ -1,14 +1,20 @@
 import * as React from "react"
 import type { Preview } from "@storybook/react"
+import { privateersLightTheme } from "./privateers-theme"
 import "./storybook.css"
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      theme: privateersLightTheme,
+    },
     backgrounds: {
-      default: "dark",
+      default: "light",
       values: [
         { name: "light", value: "#ffffff" },
         { name: "dark", value: "#09090b" },
+        { name: "dis-light", value: "#f8fafc" },
+        { name: "dis-dark", value: "#0f172a" },
       ],
     },
     controls: {
@@ -21,9 +27,14 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const isDark = context.globals.theme === "dark"
+      const theme = context.globals.theme ?? "light"
+      const brand = context.globals.brand ?? "privateers"
+
+      const isDark = theme === "dark"
+      const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : ""
+
       return (
-        <div className={isDark ? "dark" : ""}>
+        <div className={`${isDark ? "dark" : ""} ${brandClass}`.trim()}>
           <div className="bg-background text-foreground p-4 min-h-[100px]">
             <Story />
           </div>
@@ -32,10 +43,24 @@ const preview: Preview = {
     },
   ],
   globalTypes: {
+    brand: {
+      name: "Brand",
+      description: "Brand theme",
+      defaultValue: "privateers",
+      toolbar: {
+        icon: "paintbrush",
+        items: [
+          { value: "privateers", title: "Privateers" },
+          { value: "dis-creadis", title: "DIS/CREADIS" },
+        ],
+        showName: true,
+        dynamicTitle: true,
+      },
+    },
     theme: {
       name: "Theme",
-      description: "Global theme for components",
-      defaultValue: "dark",
+      description: "Color theme",
+      defaultValue: "light",
       toolbar: {
         icon: "circlehollow",
         items: [

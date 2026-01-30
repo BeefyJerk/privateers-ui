@@ -27,7 +27,7 @@ function ThemeShowcase() {
           {/* Header */}
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Privateers Design Tokens</h1>
+              <h1 className="text-3xl font-bold">Design Tokens</h1>
               <p className="text-muted-foreground mt-2">
                 Color system built with OKLch for perceptually uniform colors
               </p>

@@ -1,0 +1,142 @@
+/*
+ * DIS/CREADIS Brand Theme
+ *
+ * This theme overrides the default Privateers design tokens
+ * with DIS/CREADIS brand colors and styling.
+ *
+ * Usage:
+ *   @import '@privateers/ui/styles/brands/dis-creadis.css';
+ *
+ * Or apply the class to a container:
+ *   <div class="brand-dis-creadis">...</div>
+ */
+
+/*
+ * DIS/CREADIS Brand Colors:
+ * - Primary: Deep Blue (#003366) - trustworthy, professional
+ * - Accent: Vibrant Teal (#00A5A5) - innovation, creativity
+ * - Base: Slate gray tones for neutrals
+ */
+
+:root .brand-dis-creadis,
+.brand-dis-creadis {
+  /* Typography - Inter for a modern, professional feel */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Base colors - Slate */
+  --background: oklch(0.99 0.002 247);
+  --foreground: oklch(0.15 0.015 250);
+
+  /* Card */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.015 250);
+
+  /* Popover */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.015 250);
+
+  /* Primary - Deep Blue */
+  --primary: oklch(0.35 0.12 250);
+  --primary-foreground: oklch(0.98 0.005 250);
+
+  /* Secondary - Light Slate */
+  --secondary: oklch(0.95 0.008 250);
+  --secondary-foreground: oklch(0.25 0.015 250);
+
+  /* Muted */
+  --muted: oklch(0.95 0.008 250);
+  --muted-foreground: oklch(0.50 0.015 250);
+
+  /* Accent - Vibrant Teal */
+  --accent: oklch(0.65 0.15 185);
+  --accent-foreground: oklch(0.15 0.015 185);
+
+  /* Destructive */
+  --destructive: oklch(0.55 0.22 25);
+
+  /* Border & Input */
+  --border: oklch(0.90 0.008 250);
+  --input: oklch(0.90 0.008 250);
+  --ring: oklch(0.50 0.12 250);
+
+  /* Chart colors - Blue to Teal gradient */
+  --chart-1: oklch(0.70 0.10 250);
+  --chart-2: oklch(0.60 0.12 240);
+  --chart-3: oklch(0.55 0.14 220);
+  --chart-4: oklch(0.50 0.15 200);
+  --chart-5: oklch(0.55 0.15 185);
+
+  /* Border radius - Slightly smaller for professional look */
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: oklch(0.98 0.002 250);
+  --sidebar-foreground: oklch(0.15 0.015 250);
+  --sidebar-primary: oklch(0.35 0.12 250);
+  --sidebar-primary-foreground: oklch(0.98 0.005 250);
+  --sidebar-accent: oklch(0.95 0.008 250);
+  --sidebar-accent-foreground: oklch(0.25 0.015 250);
+  --sidebar-border: oklch(0.90 0.008 250);
+  --sidebar-ring: oklch(0.50 0.12 250);
+}
+
+/* Dark mode for DIS/CREADIS */
+.dark .brand-dis-creadis,
+.brand-dis-creadis.dark,
+.dark.brand-dis-creadis,
+.brand-dis-creadis .dark {
+  /* Base colors */
+  --background: oklch(0.15 0.015 250);
+  /* --foreground: oklch(0.95 0.005 250); */
+  --foreground: oklch(0.3904 0.0472 159.21);
+
+  /* Card */
+  --card: oklch(0.20 0.015 250);
+  --card-foreground: oklch(0.95 0.005 250);
+
+  /* Popover */
+  --popover: oklch(0.20 0.015 250);
+  --popover-foreground: oklch(0.95 0.005 250);
+
+  /* Primary - Lighter blue for dark mode */
+  --primary: oklch(0.55 0.15 250);
+  --primary-foreground: oklch(0.98 0.005 250);
+
+  /* Secondary */
+  --secondary: oklch(0.25 0.015 250);
+  --secondary-foreground: oklch(0.95 0.005 250);
+
+  /* Muted */
+  --muted: oklch(0.25 0.015 250);
+  --muted-foreground: oklch(0.65 0.010 250);
+
+  /* Accent - Brighter teal for dark mode */
+  --accent: oklch(0.70 0.14 185);
+  --accent-foreground: oklch(0.15 0.015 185);
+
+  /* Destructive */
+  --destructive: oklch(0.65 0.20 25);
+
+  /* Border & Input */
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.55 0.15 250);
+
+  /* Chart colors */
+  --chart-1: oklch(0.70 0.10 250);
+  --chart-2: oklch(0.65 0.12 240);
+  --chart-3: oklch(0.60 0.14 220);
+  --chart-4: oklch(0.58 0.15 200);
+  --chart-5: oklch(0.65 0.14 185);
+
+  /* Sidebar */
+  --sidebar: oklch(0.18 0.015 250);
+  --sidebar-foreground: oklch(0.95 0.005 250);
+  --sidebar-primary: oklch(0.60 0.14 250);
+  --sidebar-primary-foreground: oklch(0.98 0.005 250);
+  --sidebar-accent: oklch(0.25 0.015 250);
+  --sidebar-accent-foreground: oklch(0.95 0.005 250);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.55 0.15 250);
+}

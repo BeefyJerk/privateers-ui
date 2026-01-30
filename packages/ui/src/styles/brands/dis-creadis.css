@@ -87,9 +87,9 @@
 .dark.brand-dis-creadis,
 .brand-dis-creadis .dark {
   /* Base colors */
-  --background: oklch(0.15 0.015 250);
-  /* --foreground: oklch(0.95 0.005 250); */
-  --foreground: oklch(0.3904 0.0472 159.21);
+  /* --background: oklch(0.15 0.015 250); */
+  --background: oklch(0.3904 0.0472 159.21);
+  --foreground: oklch(0.95 0.005 250);
 
   /* Card */
   --card: oklch(0.20 0.015 250);

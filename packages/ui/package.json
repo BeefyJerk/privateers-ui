@@ -80,6 +80,12 @@
     "privateers"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeefyJerk/privateers-ui.git",
+    "directory": "packages/ui"
   }
 }

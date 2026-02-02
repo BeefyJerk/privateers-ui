@@ -4,20 +4,6 @@ Privateers Design System - A modern React component library built with Radix UI,
 
 ## Installation
 
-### 1. Configure npm for GitHub Packages
-
-Add a `.npmrc` file to your project root:
-
-```
-@privateers:registry=https://npm.pkg.github.com
-```
-
-You'll also need a GitHub token with `read:packages` scope. Either:
-- Set `NPM_TOKEN` environment variable, or
-- Login: `npm login --registry=https://npm.pkg.github.com`
-
-### 2. Install the package
-
 ```bash
 npm install @privateers/ui
 # or

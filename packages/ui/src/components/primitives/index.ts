@@ -21,9 +21,11 @@ export {
   CardDescription,
   CardContent,
 } from "./card"
+export { Calendar, type CalendarProps } from "./calendar"
 export { Checkbox } from "./checkbox"
 export { Collapsible, CollapsibleTrigger, CollapsibleContent } from "./collapsible"
 export { Container, containerVariants } from "./container"
+export { DatePicker, DateRangePicker } from "./date-picker"
 export { Grid, GridItem, gridVariants, gridItemVariants } from "./grid"
 export { Input } from "./input"
 export { Label } from "./label"

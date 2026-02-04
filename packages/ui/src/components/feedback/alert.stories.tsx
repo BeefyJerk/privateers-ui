@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Alert, AlertTitle, AlertDescription } from "./alert"
-import { AlertCircle, CheckCircle2, Info, AlertTriangle } from "lucide-react"
+import { AlertCircle, CheckCircle2, Info as InfoIcon, AlertTriangle } from "lucide-react"
 
 const meta: Meta<typeof Alert> = {
   title: "Feedback/Alert",
@@ -58,10 +58,10 @@ export const Warning: Story = {
   ),
 }
 
-export const Info: Story = {
+export const InfoAlert: Story = {
   render: () => (
     <Alert variant="info">
-      <Info className="size-4" />
+      <InfoIcon className="size-4" />
       <AlertTitle>Information</AlertTitle>
       <AlertDescription>
         A new software update is available.

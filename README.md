@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Privateers UI
 
-## Getting Started
+A modern React component library built with Radix UI, CVA, and Tailwind CSS v4.
 
-First, run the development server:
+## Installation
 
 ```bash
-npm run dev
+npm install @privateers/ui
 # or
-yarn dev
+pnpm add @privateers/ui
 # or
-pnpm dev
-# or
-bun dev
+yarn add @privateers/ui
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Configure Tailwind
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Add the Privateers preset to your `tailwind.config.ts`:
 
-## Learn More
+```ts
+import { privateersPreset } from '@privateers/ui/tailwind/preset'
 
-To learn more about Next.js, take a look at the following resources:
+export default {
+  presets: [privateersPreset],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@privateers/ui/dist/**/*.js',
+  ],
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Import Styles (optional)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If you want the base styles:
 
-## Deploy on Vercel
+```ts
+import '@privateers/ui/styles'
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Add CSS Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add these CSS variables to your global CSS:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+}
+```
+
+## Usage
+
+```tsx
+import { Button, Card, CardHeader, CardTitle, CardContent } from '@privateers/ui'
+
+export function Example() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Welcome</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button>Click me</Button>
+      </CardContent>
+    </Card>
+  )
+}
+```
+
+## Components
+
+### Primitives
+- **Accordion** - Collapsible content sections
+- **Avatar** - User profile images with fallback
+- **Badge** - Status indicators and labels
+- **Breadcrumb** - Navigation trail
+- **Button** - Interactive buttons with variants
+- **Card** - Content containers
+- **Checkbox** - Toggle inputs
+- **Input** - Text inputs
+- **Label** - Form labels
+- **Pagination** - Page navigation
+- **Progress** - Progress indicators
+- **RadioGroup** - Single selection from options
+- **Separator** - Visual dividers
+- **Skeleton** - Loading placeholders
+- **Slider** - Range inputs
+- **Spinner** - Loading spinners
+- **Switch** - Toggle switches
+- **Table** - Data tables
+- **Tabs** - Tabbed content
+- **Textarea** - Multi-line text inputs
+
+### Forms
+- **Field** - Form field wrapper with label/error
+- **InputGroup** - Input with addons
+- **Select** - Dropdown selection
+
+### Feedback
+- **Alert** - Status messages (success, warning, error, info)
+- **AlertDialog** - Confirmation dialogs
+- **Dialog** - Modal dialogs
+- **DropdownMenu** - Context menus
+- **Popover** - Floating content
+- **Sheet** - Slide-out panels
+- **Toast** - Notifications
+- **Tooltip** - Hover information
+
+## Storybook
+
+View all components in Storybook:
+
+```bash
+cd apps/storybook
+npm run dev
+```
+
+Or visit: https://privateers-ui.vercel.app
+
+## Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Build the package
+pnpm build
+
+# Run Storybook
+pnpm --filter storybook dev
+```
+
+## License
+
+MIT © Privateers ApS

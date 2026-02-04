@@ -23,6 +23,8 @@ export {
 } from "./card"
 export { Checkbox } from "./checkbox"
 export { Collapsible, CollapsibleTrigger, CollapsibleContent } from "./collapsible"
+export { Container, containerVariants } from "./container"
+export { Grid, GridItem, gridVariants, gridItemVariants } from "./grid"
 export { Input } from "./input"
 export { Label } from "./label"
 export {
@@ -49,8 +51,25 @@ export { Progress } from "./progress"
 export { RadioGroup, RadioGroupItem } from "./radio-group"
 export { ScrollArea, ScrollBar } from "./scroll-area"
 export { Separator } from "./separator"
+export {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+  SidebarTrigger,
+  useSidebar,
+  sidebarMenuButtonVariants,
+} from "./sidebar"
 export { Slider } from "./slider"
 export { Skeleton } from "./skeleton"
+export { Stack, VStack, HStack, stackVariants } from "./stack"
 export { Spinner, spinnerVariants } from "./spinner"
 export { Switch } from "./switch"
 export {

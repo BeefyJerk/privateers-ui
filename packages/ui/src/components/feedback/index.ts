@@ -16,6 +16,36 @@ export {
 } from "./alert-dialog"
 
 export {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator,
+} from "./command"
+
+export {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuGroup,
+  ContextMenuPortal,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuRadioGroup,
+} from "./context-menu"
+
+export {
   Dialog,
   DialogClose,
   DialogContent,
@@ -46,15 +76,7 @@ export {
   DropdownMenuSubContent,
 } from "./dropdown-menu"
 
-export {
-  Toast,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
-  toastVariants,
-  useToast,
-} from "./toast"
+export { HoverCard, HoverCardTrigger, HoverCardContent } from "./hover-card"
 
 export {
   Popover,
@@ -77,6 +99,16 @@ export {
   SheetDescription,
   sheetVariants,
 } from "./sheet"
+
+export {
+  Toast,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+  toastVariants,
+  useToast,
+} from "./toast"
 
 export {
   Tooltip,

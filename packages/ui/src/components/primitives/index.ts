@@ -1,4 +1,5 @@
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion"
+export { AspectRatio } from "./aspect-ratio"
 export { Avatar, AvatarImage, AvatarFallback } from "./avatar"
 export {
   Breadcrumb,
@@ -21,8 +22,20 @@ export {
   CardContent,
 } from "./card"
 export { Checkbox } from "./checkbox"
+export { Collapsible, CollapsibleTrigger, CollapsibleContent } from "./collapsible"
 export { Input } from "./input"
 export { Label } from "./label"
+export {
+  navigationMenuTriggerStyle,
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+  NavigationMenuIndicator,
+  NavigationMenuViewport,
+} from "./navigation-menu"
 export {
   Pagination,
   PaginationContent,
@@ -34,6 +47,7 @@ export {
 } from "./pagination"
 export { Progress } from "./progress"
 export { RadioGroup, RadioGroupItem } from "./radio-group"
+export { ScrollArea, ScrollBar } from "./scroll-area"
 export { Separator } from "./separator"
 export { Slider } from "./slider"
 export { Skeleton } from "./skeleton"

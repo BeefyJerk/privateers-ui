@@ -19,7 +19,7 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn("p-3", className)}
+      className={cn("p-3 rounded-lg border shadow-sm relative", className)}
       classNames={{
         // Container structure
         months: "flex flex-col sm:flex-row gap-4",
@@ -27,15 +27,15 @@ function Calendar({
         month_caption: "flex justify-center pt-1 relative items-center h-7",
         caption_label: "text-sm font-medium",
         
-        // Navigation
-        nav: "flex items-center gap-1",
+        // Navigation - buttons inside the container
+        nav: "flex items-center justify-between absolute inset-x-0 top-3 px-3",
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
-          "absolute left-1 h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+          "h-7 w-7 bg-transparent p-0 hover:bg-accent hover:text-accent-foreground"
         ),
         button_next: cn(
           buttonVariants({ variant: "outline" }),
-          "absolute right-1 h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+          "h-7 w-7 bg-transparent p-0 hover:bg-accent hover:text-accent-foreground"
         ),
         
         // Calendar grid
@@ -47,23 +47,24 @@ function Calendar({
         // Day cells (v9: 'day' is the cell, 'day_button' is the button inside)
         day: cn(
           "relative h-8 w-8 p-0 text-center text-sm focus-within:relative focus-within:z-20",
-          "[&:has([data-selected])]:bg-accent [&:has([data-selected].outside)]:bg-accent/50",
+          "[&:has([aria-selected])]:bg-accent [&:has([aria-selected].outside)]:bg-accent/50",
           props.mode === "range"
-            ? "[&:has(>.range_end)]:rounded-r-md [&:has(>.range_start)]:rounded-l-md first:[&:has([data-selected])]:rounded-l-md last:[&:has([data-selected])]:rounded-r-md"
-            : "[&:has([data-selected])]:rounded-md"
+            ? "[&:has(>.range_end)]:rounded-r-md [&:has(>.range_start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
+            : "[&:has([aria-selected])]:rounded-md"
         ),
         day_button: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-8 w-8 p-0 font-normal aria-selected:opacity-100"
+          "h-8 w-8 p-0 font-normal aria-selected:opacity-100",
+          "aria-selected:bg-primary aria-selected:text-primary-foreground"
         ),
         
         // Selection states (v9 names)
         range_start: "range_start",
         range_end: "range_end",
         range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
-        selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        today: "bg-accent text-accent-foreground",
-        outside: "text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground",
+        selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground rounded-md",
+        today: "bg-accent text-accent-foreground rounded-md",
+        outside: "text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground",
         disabled: "text-muted-foreground opacity-50",
         hidden: "invisible",
         

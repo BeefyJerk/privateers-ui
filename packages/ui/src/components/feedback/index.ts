@@ -1,3 +1,5 @@
+export { Alert, AlertTitle, AlertDescription, alertVariants } from "./alert"
+
 export {
   AlertDialog,
   AlertDialogAction,
@@ -53,6 +55,14 @@ export {
   toastVariants,
   useToast,
 } from "./toast"
+
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverAnchor,
+  PopoverClose,
+} from "./popover"
 
 export {
   Tooltip,

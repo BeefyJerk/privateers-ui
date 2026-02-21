@@ -1601,7 +1601,7 @@ function Slider({
           radixUi.Slider.Track,
           {
             "data-slot": "slider-track",
-            className: "relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20",
+            className: "relative h-1.5 w-full grow overflow-hidden rounded-full bg-muted",
             children: /* @__PURE__ */ jsxRuntime.jsx(
               radixUi.Slider.Range,
               {

@@ -34,8 +34,8 @@ const preview: Preview = {
       const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : brand === "m-plus" ? "brand-m-plus" : ""
 
       return (
-        <div className={`${isDark ? "dark" : ""} ${brandClass}`.trim()}>
-          <div className="bg-background text-foreground p-4 min-h-[100px]">
+        <div className={`w-full ${isDark ? "dark" : ""} ${brandClass}`.trim()}>
+          <div className="w-full bg-background text-foreground p-4 min-h-[100px]">
             <Story />
           </div>
         </div>

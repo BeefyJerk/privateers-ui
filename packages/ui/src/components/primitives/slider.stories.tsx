@@ -5,6 +5,9 @@ const meta: Meta<typeof Slider> = {
   title: "Primitives/Slider",
   component: Slider,
   tags: ["autodocs"],
+  parameters: {
+    layout: "padded",
+  },
 }
 
 export default meta
@@ -16,7 +19,7 @@ export const Default: Story = {
     max: 100,
     step: 1,
   },
-  render: (args) => <Slider {...args} className="w-[60%]" />,
+  render: (args) => <Slider {...args} className="w-full" />,
 }
 
 export const Range: Story = {
@@ -25,7 +28,7 @@ export const Range: Story = {
     max: 100,
     step: 1,
   },
-  render: (args) => <Slider {...args} className="w-[60%]" />,
+  render: (args) => <Slider {...args} className="w-full" />,
 }
 
 export const WithSteps: Story = {
@@ -34,5 +37,5 @@ export const WithSteps: Story = {
     max: 100,
     step: 10,
   },
-  render: (args) => <Slider {...args} className="w-[60%]" />,
+  render: (args) => <Slider {...args} className="w-full" />,
 }

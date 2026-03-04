@@ -1,5 +1,5 @@
 import { defineConfig } from 'tsup'
-import { writeFileSync, readFileSync } from 'fs'
+import { writeFileSync, readFileSync, cpSync, mkdirSync } from 'fs'
 import { join } from 'path'
 
 export default defineConfig({
@@ -34,5 +34,9 @@ export default defineConfig({
         }
       } catch {}
     }
+
+    // Copy CSS styles to dist
+    mkdirSync('dist/styles/brands', { recursive: true })
+    cpSync('src/styles', 'dist/styles', { recursive: true })
   },
 })

@@ -1,6 +1,6 @@
 {
-  "buildCommand": "",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build",
   "outputDirectory": "apps/storybook/dist",
-  "installCommand": "",
   "framework": null
 }

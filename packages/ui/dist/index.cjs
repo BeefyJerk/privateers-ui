@@ -1615,7 +1615,7 @@ function Slider({
           radixUi.Slider.Thumb,
           {
             "data-slot": "slider-thumb",
-            className: "block size-4 rounded-full border-2 border-primary bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            className: "block size-4 rounded-full border-2 border-primary bg-primary-foreground shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
           },
           index
         ))
@@ -1764,7 +1764,7 @@ function Switch({
           "data-slot": "switch-thumb",
           className: cn(
             "pointer-events-none block size-4 rounded-full bg-background shadow-lg ring-0 transition-transform",
-            "data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+            "data-[state=checked]:translate-x-4 data-[state=checked]:bg-primary-foreground data-[state=unchecked]:translate-x-0"
           )
         }
       )

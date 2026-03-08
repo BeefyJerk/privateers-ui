@@ -69,8 +69,8 @@
   --chart-4: oklch(0.50 0.15 200);
   --chart-5: oklch(0.55 0.15 185);
 
-  /* Border radius - Slightly smaller for professional look */
-  --radius: 0.0rem;
+  /* Border radius - Subtle rounding for professional look */
+  --radius: 0.25rem;
 
   /* Sidebar */
   --sidebar: oklch(0.98 0.002 250);

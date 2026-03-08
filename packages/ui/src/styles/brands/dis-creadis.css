@@ -59,8 +59,8 @@ html.brand-dis-creadis {
   --destructive: oklch(0.6632 0.1875 333.2);
 
   /* Border & Input */
-  --border: oklch(0.90 0.008 250);
-  --input: oklch(0.90 0.008 250);
+  --border: oklch(0.75 0.008 250);
+  --input: oklch(0.75 0.008 250);
   --ring: oklch(0.50 0.12 250);
 
   /* Chart colors - Blue to Teal gradient */

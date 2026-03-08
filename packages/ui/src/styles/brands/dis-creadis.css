@@ -27,7 +27,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* Base colors - Slate */
-  --background: oklch(0.8336 0.003 220.58);
+  --background: oklch(0.8443 0.003 220.58);
   --foreground: oklch(0.15 0.015 250);
 
   /* Card */

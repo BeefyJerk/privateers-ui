@@ -12,7 +12,8 @@
  */
 
 :root .brand-m-plus,
-.brand-m-plus {
+.brand-m-plus,
+html.brand-m-plus {
   /* Typography - Mulish for M+ brand */
   --font-sans: "Mulish", sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
@@ -78,7 +79,9 @@
 .dark .brand-m-plus,
 .brand-m-plus.dark,
 .dark.brand-m-plus,
-.brand-m-plus .dark {
+.brand-m-plus .dark,
+html.brand-m-plus.dark,
+html.dark.brand-m-plus {
   /* Base colors */
   --background: oklch(0.3541 0.0428 179.14);
   --foreground: oklch(0.985 0 0);

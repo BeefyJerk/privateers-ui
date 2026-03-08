@@ -26,7 +26,8 @@
  */
 
 :root .brand-retur,
-.brand-retur {
+.brand-retur,
+html.brand-retur {
   /* Typography - Open Sans for body, Oswald for headings */
   --font-sans: "Open Sans", sans-serif;
   --font-heading: "Oswald", sans-serif;
@@ -93,7 +94,9 @@
 .dark .brand-retur,
 .brand-retur.dark,
 .dark.brand-retur,
-.brand-retur .dark {
+.brand-retur .dark,
+html.brand-retur.dark,
+html.dark.brand-retur {
   /* Base colors */
   --background: oklch(0.1569 0 0); /* #141414 */
   --foreground: oklch(0.9608 0 0); /* #F4F4F4 */

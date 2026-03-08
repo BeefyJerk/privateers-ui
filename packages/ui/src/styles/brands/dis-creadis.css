@@ -21,7 +21,8 @@
  */
 
 :root .brand-dis-creadis,
-.brand-dis-creadis {
+.brand-dis-creadis,
+html.brand-dis-creadis {
   /* Typography - TT Commons for DIS/CREADIS brand */
   --font-sans: "TT Commons", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -87,7 +88,9 @@
 .dark .brand-dis-creadis,
 .brand-dis-creadis.dark,
 .dark.brand-dis-creadis,
-.brand-dis-creadis .dark {
+.brand-dis-creadis .dark,
+html.brand-dis-creadis.dark,
+html.dark.brand-dis-creadis {
   /* Base colors */
   /* --background: oklch(0.15 0.015 250); */
  /* --background: oklch(0.3103 0.0503 157.05); */

@@ -31,7 +31,14 @@ const preview: Preview = {
       const brand = context.globals.brand ?? "privateers"
 
       const isDark = theme === "dark"
-      const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : brand === "m-plus" ? "brand-m-plus" : ""
+      const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : brand === "m-plus" ? "brand-m-plus" : brand === "retur" ? "brand-retur" : ""
+
+      React.useEffect(() => {
+        const html = document.documentElement
+        html.classList.remove("brand-dis-creadis", "brand-m-plus", "brand-retur", "dark")
+        if (brandClass) html.classList.add(brandClass)
+        if (isDark) html.classList.add("dark")
+      }, [brandClass, isDark])
 
       return (
         <div className={`w-full ${isDark ? "dark" : ""} ${brandClass}`.trim()}>

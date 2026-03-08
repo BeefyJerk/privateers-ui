@@ -71,7 +71,7 @@ html.brand-dis-creadis {
   --chart-5: oklch(0.55 0.15 185);
 
   /* Border radius - Subtle rounding for professional look */
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 
   /* Sidebar */
   --sidebar: oklch(0.98 0.002 250);

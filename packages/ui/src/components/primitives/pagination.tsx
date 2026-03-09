@@ -40,23 +40,24 @@ function PaginationItem({
 
 type PaginationLinkProps = {
   isActive?: boolean
+  size?: "default" | "sm" | "icon"
 } & Pick<React.ComponentProps<"a">, "href"> &
   React.ComponentProps<"button">
 
 function PaginationLink({
   className,
   isActive,
+  size = "icon",
   ...props
 }: PaginationLinkProps) {
+  const variant = isActive ? "outline" : "ghost"
   return (
     <button
       aria-current={isActive ? "page" : undefined}
       data-slot="pagination-link"
+      data-variant={variant}
       className={cn(
-        buttonVariants({
-          variant: isActive ? "outline" : "ghost",
-          size: "icon",
-        }),
+        buttonVariants({ variant, size }),
         className
       )}
       {...props}
@@ -71,6 +72,7 @@ function PaginationPrevious({
   return (
     <PaginationLink
       aria-label="Go to previous page"
+      size="default"
       data-slot="pagination-previous"
       className={cn("gap-1 pl-2.5", className)}
       {...props}
@@ -88,6 +90,7 @@ function PaginationNext({
   return (
     <PaginationLink
       aria-label="Go to next page"
+      size="default"
       data-slot="pagination-next"
       className={cn("gap-1 pr-2.5", className)}
       {...props}

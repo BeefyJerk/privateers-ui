@@ -85,9 +85,9 @@ html.brand-dis-creadis {
 }
 
 /* Light mode: semi-transparent white background on input elements and outline buttons */
-:root .brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"]),
-.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"]),
-html.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"]) {
+:root .brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]),
+.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]),
+html.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]) {
   background-color: oklch(1 0 0 / 70%);
 }
 

@@ -84,6 +84,13 @@ html.brand-dis-creadis {
   --sidebar-ring: oklch(0.50 0.12 250);
 }
 
+/* Light mode: semi-transparent white background on input elements */
+:root .brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"]),
+.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"]),
+html.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"]) {
+  background: oklch(1 0 0 / 50%);
+}
+
 /* Dark mode for DIS/CREADIS */
 .dark .brand-dis-creadis,
 .brand-dis-creadis.dark,

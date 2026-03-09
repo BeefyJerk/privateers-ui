@@ -88,7 +88,7 @@ html.brand-dis-creadis {
 :root .brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"]),
 .brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"]),
 html.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"]) {
-  background: oklch(1 0 0 / 70%);
+  background-color: oklch(1 0 0 / 70%);
 }
 
 /* Dark mode for DIS/CREADIS */

@@ -13,6 +13,9 @@ const meta: Meta<typeof Field> = {
   title: "Forms/Field",
   component: Field,
   tags: ["autodocs"],
+  parameters: {
+    layout: "padded",
+  },
 }
 
 export default meta

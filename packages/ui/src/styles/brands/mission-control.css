@@ -1,0 +1,140 @@
+/*
+ * Mission Control Brand Theme – "Bloomberg Noir"
+ *
+ * Dark-first theme for Henry's AI Agent Command Center.
+ * Designed for information-dense dashboards with semantic color coding.
+ *
+ * Usage:
+ *   @import '@privateers/ui/styles/brands/mission-control.css';
+ *
+ * Or apply the class to a container:
+ *   <div class="brand-mission-control">...</div>
+ *
+ * Color palette (hex reference):
+ *   Background base:  #0D0F12
+ *   Background panel: #14171C
+ *   Background card:  #1A1F28
+ *   Border:           #2A2F3A
+ *   Text primary:     #E8EAED
+ *   Text muted:       #8B9099
+ *   Accent (indigo):  #6366F1
+ *   Success:          #22C55E
+ *   Warning:          #F59E0B
+ *   Error:            #EF4444
+ *   Info:             #06B6D4
+ */
+
+:root .brand-mission-control,
+.brand-mission-control {
+  /* Typography – Monospace numbers, clean sans-serif body */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  /* Base colors – Near-black */
+  --background: oklch(0.16 0.005 260);
+  --foreground: oklch(0.93 0.003 260);
+
+  /* Card – Elevated surface */
+  --card: oklch(0.22 0.008 260 / 80%);
+  --card-foreground: oklch(0.93 0.003 260);
+
+  /* Popover */
+  --popover: oklch(0.20 0.007 260);
+  --popover-foreground: oklch(0.93 0.003 260);
+
+  /* Primary – Indigo accent */
+  --primary: oklch(0.55 0.22 275);
+  --primary-foreground: oklch(0.97 0.003 260);
+
+  /* Secondary – Panel surface */
+  --secondary: oklch(0.20 0.007 260);
+  --secondary-foreground: oklch(0.93 0.003 260);
+
+  /* Muted */
+  --muted: oklch(0.22 0.008 260);
+  --muted-foreground: oklch(0.60 0.010 260);
+
+  /* Accent – Indigo */
+  --accent: oklch(0.55 0.22 275);
+  --accent-foreground: oklch(0.97 0.003 260);
+
+  /* Destructive – Red */
+  --destructive: oklch(0.58 0.20 25);
+
+  /* Border & Input */
+  --border: oklch(0.30 0.008 260);
+  --input: oklch(0.25 0.008 260);
+  --ring: oklch(0.55 0.22 275);
+
+  /* Chart colors – Semantic */
+  --chart-1: oklch(0.65 0.18 150);  /* Success green */
+  --chart-2: oklch(0.55 0.22 275);  /* Indigo accent */
+  --chart-3: oklch(0.72 0.16 85);   /* Warning amber */
+  --chart-4: oklch(0.65 0.15 200);  /* Info cyan */
+  --chart-5: oklch(0.58 0.20 25);   /* Error red */
+
+  /* Border radius – Subtle, modern */
+  --radius: 0.5rem;
+
+  /* Sidebar – Agent panel dark */
+  --sidebar: oklch(0.18 0.006 260);
+  --sidebar-foreground: oklch(0.93 0.003 260);
+  --sidebar-primary: oklch(0.55 0.22 275);
+  --sidebar-primary-foreground: oklch(0.97 0.003 260);
+  --sidebar-accent: oklch(0.22 0.008 260);
+  --sidebar-accent-foreground: oklch(0.93 0.003 260);
+  --sidebar-border: oklch(0.30 0.008 260);
+  --sidebar-ring: oklch(0.55 0.22 275);
+
+  /* === Mission Control custom tokens === */
+  --mc-base: oklch(0.16 0.005 260);
+  --mc-panel: oklch(0.20 0.007 260);
+  --mc-card: oklch(0.22 0.008 260);
+  --mc-border: oklch(0.30 0.008 260);
+  --mc-text: oklch(0.93 0.003 260);
+  --mc-muted: oklch(0.60 0.010 260);
+  --mc-accent: oklch(0.55 0.22 275);
+  --mc-success: oklch(0.65 0.18 150);
+  --mc-warning: oklch(0.72 0.16 85);
+  --mc-error: oklch(0.58 0.20 25);
+  --mc-info: oklch(0.65 0.15 200);
+}
+
+/* Mission Control is dark-only – light mode maps to same values */
+.dark .brand-mission-control,
+.brand-mission-control.dark,
+.dark.brand-mission-control,
+.brand-mission-control .dark {
+  /* Identical to base – this theme is dark by design */
+  --background: oklch(0.16 0.005 260);
+  --foreground: oklch(0.93 0.003 260);
+  --card: oklch(0.22 0.008 260 / 80%);
+  --card-foreground: oklch(0.93 0.003 260);
+  --popover: oklch(0.20 0.007 260);
+  --popover-foreground: oklch(0.93 0.003 260);
+  --primary: oklch(0.55 0.22 275);
+  --primary-foreground: oklch(0.97 0.003 260);
+  --secondary: oklch(0.20 0.007 260);
+  --secondary-foreground: oklch(0.93 0.003 260);
+  --muted: oklch(0.22 0.008 260);
+  --muted-foreground: oklch(0.60 0.010 260);
+  --accent: oklch(0.55 0.22 275);
+  --accent-foreground: oklch(0.97 0.003 260);
+  --destructive: oklch(0.58 0.20 25);
+  --border: oklch(0.30 0.008 260);
+  --input: oklch(0.25 0.008 260);
+  --ring: oklch(0.55 0.22 275);
+  --chart-1: oklch(0.65 0.18 150);
+  --chart-2: oklch(0.55 0.22 275);
+  --chart-3: oklch(0.72 0.16 85);
+  --chart-4: oklch(0.65 0.15 200);
+  --chart-5: oklch(0.58 0.20 25);
+  --sidebar: oklch(0.18 0.006 260);
+  --sidebar-foreground: oklch(0.93 0.003 260);
+  --sidebar-primary: oklch(0.55 0.22 275);
+  --sidebar-primary-foreground: oklch(0.97 0.003 260);
+  --sidebar-accent: oklch(0.22 0.008 260);
+  --sidebar-accent-foreground: oklch(0.93 0.003 260);
+  --sidebar-border: oklch(0.30 0.008 260);
+  --sidebar-ring: oklch(0.55 0.22 275);
+}

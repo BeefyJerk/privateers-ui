@@ -105,7 +105,7 @@ function AvatarFallback({
     {
       "data-slot": "avatar-fallback",
       className: cn(
-        "flex size-full items-center justify-center rounded-full bg-muted text-sm font-medium",
+        "bg-muted text-muted-foreground flex size-full items-center justify-center rounded-full text-sm font-medium",
         className
       ),
       ...props
@@ -928,18 +928,18 @@ function PaginationItem({
 function PaginationLink({
   className,
   isActive,
+  size = "icon",
   ...props
 }) {
+  const variant = isActive ? "outline" : "ghost";
   return /* @__PURE__ */ jsx(
     "button",
     {
       "aria-current": isActive ? "page" : void 0,
       "data-slot": "pagination-link",
+      "data-variant": variant,
       className: cn(
-        buttonVariants({
-          variant: isActive ? "outline" : "ghost",
-          size: "icon"
-        }),
+        buttonVariants({ variant, size }),
         className
       ),
       ...props
@@ -954,6 +954,7 @@ function PaginationPrevious({
     PaginationLink,
     {
       "aria-label": "Go to previous page",
+      size: "default",
       "data-slot": "pagination-previous",
       className: cn("gap-1 pl-2.5", className),
       ...props,
@@ -972,6 +973,7 @@ function PaginationNext({
     PaginationLink,
     {
       "aria-label": "Go to next page",
+      size: "default",
       "data-slot": "pagination-next",
       className: cn("gap-1 pr-2.5", className),
       ...props,
@@ -1130,7 +1132,7 @@ function SheetOverlay({
     {
       "data-slot": "sheet-overlay",
       className: cn(
-        "fixed inset-0 z-50 bg-black/80",
+        "fixed inset-0 z-50 bg-overlay/80",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         className
@@ -2493,7 +2495,7 @@ function AlertDialogOverlay({
     AlertDialog$1.Overlay,
     {
       "data-slot": "alert-dialog-overlay",
-      className: cn("data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs fixed inset-0 z-50", className),
+      className: cn("data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 bg-overlay/10 duration-100 supports-backdrop-filter:backdrop-blur-xs fixed inset-0 z-50", className),
       ...props
     }
   );
@@ -2646,7 +2648,7 @@ function DialogOverlay({
     {
       "data-slot": "dialog-overlay",
       className: cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 bg-black/50 fixed inset-0 z-50",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 bg-overlay/50 fixed inset-0 z-50",
         className
       ),
       ...props

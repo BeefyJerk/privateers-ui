@@ -43,6 +43,7 @@ var privateersPreset = {
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
+        overlay: "var(--overlay)",
         chart: {
           1: "var(--chart-1)",
           2: "var(--chart-2)",

@@ -84,10 +84,14 @@ html.brand-dis-creadis {
   --sidebar-ring: oklch(0.50 0.12 250);
 }
 
-/* Light mode: semi-transparent white background on input elements and outline buttons */
-:root .brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]),
-.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]),
-html.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]) {
+/*
+ * Light mode only: semi-transparent white background on input elements and outline buttons.
+ * The :not(.dark *) guard ensures this does not leak into dark mode where it would produce
+ * white-on-white (near-illegible inputs, outline buttons, pagination).
+ */
+:root .brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]):not(.dark *),
+.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]):not(.dark *),
+html.brand-dis-creadis :is([data-slot="input"], [data-slot="textarea"], [data-slot="select-trigger"], [data-slot="input-group"], [data-slot="combobox-chips"], [data-slot="button"][data-variant="outline"], [data-slot="pagination-link"][data-variant="outline"]):not(.dark *) {
   background-color: oklch(1 0 0 / 70%);
 }
 
@@ -120,9 +124,10 @@ html.dark.brand-dis-creadis {
   --secondary: oklch(0.3644 0.029 220.58);
   --secondary-foreground: oklch(0.95 0.005 250);
 
-  /* Muted */
-  --muted: oklch(0.25 0.015 250);
-  --muted-foreground: oklch(0.65 0.010 250);
+  /* Muted — lightness bumped from 0.25 to 0.33 so surfaces like TabsList / AlertDialogMedia
+     have visible contrast against --background (0.2368) in dark mode. */
+  --muted: oklch(0.33 0.015 250);
+  --muted-foreground: oklch(0.72 0.010 250);
 
   /* Accent - Brighter for dark mode */
   --accent: oklch(0.9196 0.0046 78.3);

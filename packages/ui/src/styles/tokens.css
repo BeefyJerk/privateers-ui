@@ -45,6 +45,10 @@
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.705 0.015 286.067);
 
+  /* Overlay — used by dialog/sheet/alert-dialog scrims. Components apply
+     opacity via Tailwind (bg-overlay/50 etc), so the token carries only the base color. */
+  --overlay: oklch(0 0 0);
+
   /* Chart colors */
   --chart-1: oklch(0.79 0.10 275);
   --chart-2: oklch(0.68 0.16 277);
@@ -102,6 +106,10 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.552 0.016 285.938);
+
+  /* Overlay — kept black in dark mode; dialog surfaces carry their own lighter
+     --background/ring so the scrim still reads as "dim". */
+  --overlay: oklch(0 0 0);
 
   /* Chart colors */
   --chart-1: oklch(0.79 0.10 275);

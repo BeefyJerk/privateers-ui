@@ -134,8 +134,9 @@ declare function PaginationContent({ className, ...props }: React$1.ComponentPro
 declare function PaginationItem({ ...props }: React$1.ComponentProps<"li">): react_jsx_runtime.JSX.Element;
 type PaginationLinkProps = {
     isActive?: boolean;
+    size?: "default" | "sm" | "icon";
 } & Pick<React$1.ComponentProps<"a">, "href"> & React$1.ComponentProps<"button">;
-declare function PaginationLink({ className, isActive, ...props }: PaginationLinkProps): react_jsx_runtime.JSX.Element;
+declare function PaginationLink({ className, isActive, size, ...props }: PaginationLinkProps): react_jsx_runtime.JSX.Element;
 declare function PaginationPrevious({ className, ...props }: React$1.ComponentProps<typeof PaginationLink>): react_jsx_runtime.JSX.Element;
 declare function PaginationNext({ className, ...props }: React$1.ComponentProps<typeof PaginationLink>): react_jsx_runtime.JSX.Element;
 declare function PaginationEllipsis({ className, ...props }: React$1.ComponentProps<"span">): react_jsx_runtime.JSX.Element;

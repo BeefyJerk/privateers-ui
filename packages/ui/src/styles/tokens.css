@@ -68,6 +68,16 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  /* Additive tokens — consumed by brand themes (e.g. privateers-2026) and any
+     product that wants confidence tiers, a dedicated CTA colour, or a display
+     font. Harmless defaults under the default theme; brands override as needed. */
+  --tier-1: #2f9e7c;                 /* high confidence */
+  --tier-2: #e0a23b;                 /* medium confidence */
+  --tier-3: var(--destructive);      /* escalation */
+  --cta: var(--primary);             /* call-to-action fill (brands may set to an accent) */
+  --cta-foreground: var(--primary-foreground);
+  --font-display: var(--font-sans);  /* display/heading family (brands may set a serif) */
 }
 
 .dark {

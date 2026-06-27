@@ -31,11 +31,11 @@ const preview: Preview = {
       const brand = context.globals.brand ?? "privateers"
 
       const isDark = theme === "dark"
-      const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : brand === "m-plus" ? "brand-m-plus" : brand === "retur" ? "brand-retur" : ""
+      const brandClass = brand === "dis-creadis" ? "brand-dis-creadis" : brand === "m-plus" ? "brand-m-plus" : brand === "retur" ? "brand-retur" : brand === "privateers-2026" ? "brand-privateers-2026" : ""
 
       React.useEffect(() => {
         const html = document.documentElement
-        html.classList.remove("brand-dis-creadis", "brand-m-plus", "brand-retur", "dark")
+        html.classList.remove("brand-dis-creadis", "brand-m-plus", "brand-retur", "brand-privateers-2026", "dark")
         if (brandClass) html.classList.add(brandClass)
         if (isDark) html.classList.add("dark")
       }, [brandClass, isDark])
@@ -58,6 +58,7 @@ const preview: Preview = {
         icon: "paintbrush",
         items: [
           { value: "privateers", title: "Privateers" },
+          { value: "privateers-2026", title: "Privateers 2026" },
           { value: "dis-creadis", title: "DIS/CREADIS" },
           { value: "m-plus", title: "M+" },
         ],

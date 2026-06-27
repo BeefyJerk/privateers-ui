@@ -35,6 +35,12 @@
   --color-border: var(--border);
   --color-overlay: var(--overlay);
   --color-destructive: var(--destructive);
+  --color-tier-1: var(--tier-1);
+  --color-tier-2: var(--tier-2);
+  --color-tier-3: var(--tier-3);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --font-display: var(--font-display);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);

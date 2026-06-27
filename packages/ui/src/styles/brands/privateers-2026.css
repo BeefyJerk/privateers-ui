@@ -1,0 +1,198 @@
+/*
+ * Privateers 2026 Brand Theme — "Petroleum"
+ *
+ * The new Privateers mini brand book, layered onto the @privateers/ui token
+ * system as an opt-in brand. The dark petroleum universe is the brand
+ * standard; light mode is fully defined. Nothing here affects the default
+ * Privateers theme — these tokens only apply under the `.brand-privateers-2026`
+ * class (or `html.brand-privateers-2026`). Toggle off → default theme, untouched.
+ *
+ * Usage:
+ *   @import '@privateers/ui/styles/brands/privateers-2026.css';
+ *
+ *   <html class="dark brand-privateers-2026">   ← dark petroleum (recommended)
+ *   <html class="brand-privateers-2026">        ← light universe
+ *
+ * Fonts (self-host in the consuming app; never reference an external CDN):
+ *   Display — H1 / H2 : "IBM Plex Serif"  weights 400 / 500 / 600
+ *   Body / UI / H3+   : "Mona Sans"       weights 400 / 500 / 600 / 700
+ * Storybook self-hosts both via .storybook/preview-head.html + public/fonts/.
+ *
+ * Brand book values (hex — do NOT change without a brand decision):
+ *   background #142024 · surface #16272B · raised #1C3338 · border #2A4248
+ *   primary #517C83 (hover #5E8E96) · text #FFFFFF · text-secondary #ABD0D3
+ *   text-muted #8E909E · accent / CTA red #FF5449
+ *
+ * RULE: reference these tokens in product code — never hardcode hex.
+ */
+
+/* ============================================================
+   1. Light universe (base — the brand's "day" mode)
+   ============================================================ */
+:root .brand-privateers-2026,
+.brand-privateers-2026,
+html.brand-privateers-2026 {
+  /* Typography */
+  --font-sans: "Mona Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif; /* body, buttons, H3+ */
+  --font-display: "IBM Plex Serif", Georgia, "Times New Roman", serif;                /* H1 / H2 only */
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Surfaces */
+  --background: #ffffff;
+  --foreground: #142024;
+  --card: #ffffff;
+  --card-foreground: #142024;
+  --popover: #ffffff;
+  --popover-foreground: #142024;
+
+  /* Primary — petroleum */
+  --primary: #517c83;
+  --primary-foreground: #ffffff;
+  --primary-hover: #456a70;
+
+  /* Secondary / muted / accent — subtle grey surfaces (shadcn semantics, NOT the red) */
+  --secondary: #ececec;
+  --secondary-foreground: #142024;
+  --muted: #ececec;
+  --muted-foreground: #5f6470;        /* darkened slate so secondary text clears AA on white */
+  --accent: #ececec;
+  --accent-foreground: #142024;
+
+  /* CTA — brand splash red, used sparingly.
+     Deepened in light mode so white text clears WCAG AA (#d23b30 ≈ 4.8:1).
+     Dark mode keeps the pure brand red #FF5449 (≈ 5.2:1 on petroleum). */
+  --cta: #d23b30;
+  --cta-foreground: #ffffff;
+  --destructive: #d23b30;             /* brand red, deepened for legibility on light */
+
+  /* Lines & focus */
+  --border: #d8dadf;
+  --input: #d8dadf;
+  --ring: #517c83;
+
+  /* Charts — petroleum scale + tier accents */
+  --chart-1: #517c83;
+  --chart-2: #7badb1;
+  --chart-3: #abd0d3;
+  --chart-4: #2f9e7c;
+  --chart-5: #ff5449;
+
+  /* Confidence tiers (not in the brand book — tuned to the petroleum palette).
+     Light-mode values are deepened so `text-tier-*` clears WCAG AA (≥4.5:1) on
+     white, including when rendered as text on the 15%-tinted badge background. */
+  --tier-1: #1a7a5c;                  /* high confidence / auto-reply (green, ≈ 5.3:1 on white) */
+  --tier-2: #956211;                  /* medium / AI suggests (amber, ≈ 5.1:1 on white) */
+  --tier-3: #d23b30;                  /* escalation (brand red, ≈ 4.8:1 on white) */
+
+  /* Radius — inputs(md) 10px · cards(xl) 16px · buttons & badges pill */
+  --radius: 0.75rem;
+  --radius-pill: 999px;
+
+  /* Brand extras (consumed by product apps) */
+  --surface: #ececec;
+  --surface-raised: #ffffff;
+  --text: #142024;
+  --text-secondary: #16272b;
+  --text-muted: #8e909e;
+  --overlay: #0f1a1d;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #142024;
+  --sidebar-primary: #517c83;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ececec;
+  --sidebar-accent-foreground: #142024;
+  --sidebar-border: #d8dadf;
+  --sidebar-ring: #517c83;
+}
+
+/* ============================================================
+   2. Dark petroleum universe (brand standard)
+   ============================================================ */
+.dark .brand-privateers-2026,
+.brand-privateers-2026.dark,
+.dark.brand-privateers-2026,
+.brand-privateers-2026 .dark,
+html.brand-privateers-2026.dark,
+html.dark.brand-privateers-2026 {
+  /* Surfaces */
+  --background: #142024;
+  --foreground: #ffffff;
+  --card: #16272b;
+  --card-foreground: #ffffff;
+  --popover: #1c3338;
+  --popover-foreground: #ffffff;
+
+  /* Primary — petroleum */
+  --primary: #517c83;
+  --primary-foreground: #ffffff;
+  --primary-hover: #5e8e96;
+
+  /* Secondary / muted / accent — raised petroleum surfaces */
+  --secondary: #1c3338;
+  --secondary-foreground: #ffffff;
+  --muted: #1c3338;
+  --muted-foreground: #8e909e;
+  --accent: #1c3338;
+  --accent-foreground: #ffffff;
+
+  /* CTA — brand splash red */
+  --cta: #ff5449;
+  --cta-foreground: #ffffff;
+  --destructive: #ff5449;
+
+  /* Lines & focus */
+  --border: #2a4248;
+  --input: #2a4248;
+  --ring: #517c83;
+
+  /* Charts */
+  --chart-1: #517c83;
+  --chart-2: #7badb1;
+  --chart-3: #abd0d3;
+  --chart-4: #2f9e7c;
+  --chart-5: #ff5449;
+
+  /* Confidence tiers */
+  --tier-1: #2f9e7c;                  /* high confidence / auto-reply */
+  --tier-2: #e0a23b;                  /* medium / AI suggests */
+  --tier-3: #ff5449;                  /* escalation (brand red) */
+
+  /* Brand extras */
+  --surface: #16272b;
+  --surface-raised: #1c3338;
+  --text: #ffffff;
+  --text-secondary: #abd0d3;
+  --text-muted: #8e909e;
+  --overlay: #0f1a1d;
+
+  /* Sidebar */
+  --sidebar: #16272b;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #517c83;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1c3338;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #2a4248;
+  --sidebar-ring: #517c83;
+}
+
+/* ============================================================
+   3. Signature shapes & type (brand-scoped — no leakage to other themes)
+   ============================================================ */
+
+/* Pill buttons, badges & pagination — the brand's defining geometry.
+   Unlayered, so it overrides Tailwind's rounded-* utilities under this brand. */
+.brand-privateers-2026 [data-slot="button"],
+.brand-privateers-2026 [data-slot="badge"],
+.brand-privateers-2026 [data-slot="pagination-link"] {
+  border-radius: var(--radius-pill);
+}
+
+/* IBM Plex Serif is reserved for H1 / H2 (Medium). Everything else stays Mona Sans. */
+.brand-privateers-2026 :is(h1, h2, .display) {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}

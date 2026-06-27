@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import "../../../packages/ui/src/styles/brands/dis-creadis.css";
 @import "../../../packages/ui/src/styles/brands/m-plus.css";
+@import "../../../packages/ui/src/styles/brands/privateers-2026.css";
 
 /* Fonts are loaded via preview-head.html for better browser support */
 
@@ -32,6 +33,12 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-tier-1: var(--tier-1);
+  --color-tier-2: var(--tier-2);
+  --color-tier-3: var(--tier-3);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --font-display: var(--font-display);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -88,6 +95,14 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  /* Additive token defaults (mirror packages/ui/src/styles/tokens.css). */
+  --tier-1: #2f9e7c;
+  --tier-2: #e0a23b;
+  --tier-3: var(--destructive);
+  --cta: var(--primary);
+  --cta-foreground: var(--primary-foreground);
+  --font-display: var(--font-sans);
 }
 
 .dark {

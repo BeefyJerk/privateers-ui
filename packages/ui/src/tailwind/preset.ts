@@ -20,6 +20,7 @@ export const privateersPreset: Partial<Config> = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
+        display: ["var(--font-display)"],
       },
       colors: {
         background: "var(--background)",
@@ -50,6 +51,15 @@ export const privateersPreset: Partial<Config> = {
         },
         destructive: {
           DEFAULT: "var(--destructive)",
+        },
+        cta: {
+          DEFAULT: "var(--cta)",
+          foreground: "var(--cta-foreground)",
+        },
+        tier: {
+          1: "var(--tier-1)",
+          2: "var(--tier-2)",
+          3: "var(--tier-3)",
         },
         border: "var(--border)",
         input: "var(--input)",
